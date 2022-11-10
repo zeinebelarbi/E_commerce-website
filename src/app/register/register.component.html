@@ -1,0 +1,81 @@
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 "><img src="assets/register.jpg" alt="image" width="530px"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                        </div>
+                        <form class="user" [formGroup]=" registerform" (ngSubmit)="register()">
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" formControlName="firstname" class="form-control form-control-user" id="exampleFirstName"
+                                        placeholder="First Name">
+                                        <div *ngIf="FirstName.touched && FirstName.invalid">
+                                            <small class= "text-danger" *ngIf="FirstName.errors?.['required']">firstname is required</small>
+                                            <small class="text-danger"  *ngIf="FirstName.errors?.['pattern']">firstname is invalid</small>
+                                        </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" formControlName="lastname" class="form-control form-control-user" id="exampleLastName"
+                                        placeholder="Last Name">
+                                        <div *ngIf="LastName.touched && LastName.invalid">
+                                            <small class= "text-danger" *ngIf="LastName.errors?.['required']">lastname is required</small>
+                                            <small class="text-danger"  *ngIf="LastName.errors?.['pattern']">lastname is invalid</small>
+                                        </div>
+
+                                </div>   
+                            </div>
+                            <div class="form-group">
+                                <input type="email"  formControlName="email"class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Email Address">
+                                    <div * ngIf="email?.touched && email?.invalid">
+                                        <small class="text-danger" * ngIf="email?.errors?.['required']">emailadress is required</small>
+                                        <small class="text-danger" * ngIf="email?.errors?.['email']">emailadress is invalid</small>
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="password" formControlName="password"class="form-control form-control-user"
+                                        id="exampleInputPassword" placeholder="Password">
+                                        <div * ngIf="password?.touched && password?.invalid">
+                                            <small class="text-danger" * ngIf="password?.errors?.['required']">password is required</small>
+                                            <small class="text-danger" * ngIf="password?.errors?.['minlength']">password is invalid</small>
+                                        </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" formControlName="passwordrep" class="form-control form-control-user"
+                                        id="exampleRepeatPassword" placeholder="Repeat Password">
+                                        <div * ngIf="passwordrep?.touched && passwordrep?.invalid">
+                                            <small class="text-danger" * ngIf="passwordrep?.errors?.['required']">passwordrep is required</small>
+                                            <small class="text-danger" * ngIf="passwordrep?.errors?.['minlength']">passwordrep is invalid</small>
+                                        </div>
+                                </div>
+                            </div>
+                            
+    
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                Register Account
+                            </button>
+                            <hr>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a class="small"routerLink="/forgetpassword">Forgot Password?</a>
+                        </div>
+                        <div class="text-center">
+                            <a class="small"routerLink="/login" >Already have an account? Login!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
